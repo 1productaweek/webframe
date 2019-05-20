@@ -24,3 +24,7 @@ a {
 img {
   max-width: 100%;
 }
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}

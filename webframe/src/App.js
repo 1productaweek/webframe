@@ -4,6 +4,8 @@ import 'typeface-open-sans'
 import { Router } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Nav from 'components/Nav'
+import ModalProvider from './components/modals/ModalProvider'
+
 
 import './reset.css'
 import './app.css'
@@ -14,15 +16,17 @@ addPrefetchExcludes(['dynamic'])
 function App() {
   return (
     <Root>
-      <Nav />
-      <div className="content">
-        <React.Suspense fallback={<em>Loading...</em>}>
-          <Router>
-            <Dynamic path="dynamic" />
-            <Routes path="*" />
-          </Router>
-        </React.Suspense>
-      </div>
+      <ModalProvider>
+        <Nav />
+        <div className="content">
+          <React.Suspense fallback={<em>Loading...</em>}>
+            <Router>
+              <Dynamic path="dynamic" />
+              <Routes path="*" />
+            </Router>
+          </React.Suspense>
+        </div>
+      </ModalProvider>
     </Root>
   )
 }

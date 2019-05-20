@@ -16,6 +16,7 @@
     "babel-plugin-tailwind-components": "^1.0.0-alpha.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-modal": "^3.8.1",
     "react-static": "^7.0.0",
     "react-static-plugin-reach-router": "^7.0.0",
     "react-static-plugin-sitemap": "^7.0.0",

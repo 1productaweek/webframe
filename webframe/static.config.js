@@ -1,5 +1,5 @@
 import path from 'path'
-import Storage from '@google-cloud/storage'
+import { Storage } from '@google-cloud/storage'
 
 // import axios from 'axios'
 
@@ -22,8 +22,24 @@ export default {
   }),
   getRoutes: async () => {
 
-  // Creates a client
-  const storage = new Storage();
+    // Creates a client
+    const storage = new Storage({
+      keyFilename: 'webframe.service-account.json',
+    })
+
+    const bucket = storage.bucket('webframe-screens')
+    const [gcfiles] = await bucket.getFiles()
+
+    const files = gcfiles.map(file => {
+      const { name, metadata, mediaLink } = file.metadata
+      return {
+        name,
+        meta: metadata,
+        src: mediaLink,
+      }
+    })
+
+    console.log(files)
 
     return [
       {
@@ -43,6 +59,7 @@ export default {
           template: 'src/containers/Category',
           getData: () => ({
             category,
+            files,
           }),
         })),
       },

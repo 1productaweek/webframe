@@ -8,11 +8,11 @@ import Layout from 'components/Layout'
 const items = [{}, {}, {}, {}]
 
 function Category () {
-  const { category } = useRouteData()
+  const { category, files } = useRouteData()
   return (
     <Layout>
-      <h2 css={css`margin-bottom: 1em;`}>{ category.name}</h2>
-      <List items={items} />
+      <h2 css={css`margin-bottom: 1em;`}>{ category.name }</h2>
+      <List items={files} />
     </Layout>
   )
 }

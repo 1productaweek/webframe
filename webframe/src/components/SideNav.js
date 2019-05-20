@@ -37,7 +37,7 @@ const styles = {
     ${tw`mb-2`}
     a {
       ${tw`
-        text-sm
+        text-xs
         text-gray-700
       `}
     }
