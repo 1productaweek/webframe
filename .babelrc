@@ -1,0 +1,4 @@
+{
+  "plugins": ["emotion", "macros"],
+  "presets": ["react-static/babel-preset.js", "@emotion/babel-preset-css-prop"]
+}
