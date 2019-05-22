@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import useModal from 'components/modals/useModal'
 import tw from 'tailwind.macro'
 import ScreenModal from './ScreenModal'
+import { Row, Col } from './grid'
 
 function List ({ items }) {
   const { CACHE_URL } = useSiteData()
@@ -19,19 +20,20 @@ function List ({ items }) {
     </div>
   ))
   return (
-    <div css={css`${tw`flex flex-wrap -m-2`}`}>
-      <div  css={css`${tw`w-1/2 p-2`}`}>
+    <Row gutter={2}>
+      <Col col={12} sm={6} gutter={2} css={css`max-width: 600px;`}>
         {itemsEl.filter((_, i) => i % 2 === 0)}
-      </div>
-      <div css={css`${tw`w-1/2 p-2`}`}>
-      {itemsEl.filter((_, i) => i % 2 !== 0)}
-      </div>
-    </div>
+      </Col>
+      <Col col={12} sm={6} gutter={2} css={css`max-width: 600px;`}>
+        {itemsEl.filter((_, i) => i % 2 !== 0)}
+      </Col>
+    </Row>
   )
 }
 
 const styles = {
   screen: css`
+    cursor: pointer;
     ${tw`
       mb-4
       w-full

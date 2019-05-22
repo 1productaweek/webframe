@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
 import { Link } from 'components/Router'
 import Button from './Button'
+import cancel from 'img/cancel.png'
 
 const customStyles = {
   content : {
@@ -30,9 +31,11 @@ function ScreenModal ({ isOpen, onCancel, product, src, name }) {
       >
         <img css={css`width: 100%;`} src={src} alt={name} />
       </Modal>
+      <div><img css={styles.close} onClick={onCancel} src={cancel} alt='close' width={20} /></div>
       <div css={styles.footer}>
         <AButton href={`${DOWNLOAD_URL}?image=${src}`} download={name}>Download</AButton>
-        <Link onClick={onCancel} css={styles.viewAll} to={`/products/${product}`}>View all {product}</Link>
+        <Link onClick={onCancel} css={styles.viewAll} to={`/products/${product.id}`}>View all {product.name || product.id}</Link>
+        { product.domain && <a css={styles.domain} target='_blank' rel='noreferrer noopener' href={`https://${product.domain}`}>{product.domain}</a> }
       </div>
     </>
   )
@@ -44,6 +47,23 @@ const styles = {
       mx-2
       text-sm
     `}
+  `,
+  domain: css`
+    float: right;
+    display: block;
+    padding: 0.8em 0;
+    ${tw`
+      mx-2
+      text-sm
+    `}
+  `,
+  close: css`
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    z-index: 10;
+    width: 15px;
+    cursor: pointer;
   `,
   footer: css`
     position: fixed; 

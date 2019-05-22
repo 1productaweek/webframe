@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'components/Router'
+import { Link, NavLink } from 'components/Router'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
@@ -9,9 +9,9 @@ function SideNav () {
   const categoriesEl = categories.map(({ id, name }) => {
     return (
       <div key={id} css={styles.links}>
-        <Link to={`/categories/${id}`}>
+        <NavLink to={`/categories/${id}`}>
           {name}
-        </Link>
+        </NavLink>
       </div>
       
     )

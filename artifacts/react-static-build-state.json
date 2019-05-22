@@ -1,4 +1,5 @@
 {
+  "entry": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/src/index.js",
   "prefetchRate": 5,
   "maxThreads": null,
   "disableRoutePrefixing": false,
@@ -12,7 +13,6 @@
   "disableRuntime": false,
   "preloadPollInterval": 300,
   "productionSourceMaps": false,
-  "entry": "index.js",
   "plugins": [
     [
       "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules/react-static-plugin-source-filesystem/node.api.js",
@@ -39,17 +39,17 @@
     "HTML_TEMPLATE": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/dist/index.html",
     "STATIC_DATA": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/dist/staticData"
   },
+  "devServer": {
+    "host": "http://localhost",
+    "port": 3000
+  },
+  "babelExcludes": [],
   "siteRoot": "",
   "basePath": "",
   "publicPath": "/",
   "assetsPath": "",
   "extractCssChunks": false,
   "inlineCss": false,
-  "babelExcludes": [],
-  "devServer": {
-    "host": "localhost",
-    "port": 3000
-  },
   "terser": {
     "terserOptions": {
       "mangle": {},

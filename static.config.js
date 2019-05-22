@@ -1,8 +1,10 @@
+import React from 'react'
 import path from 'path'
 import { Storage } from '@google-cloud/storage'
 import map from 'lodash/map'
 import uniq from 'lodash/uniq'
 import categories from './content/categories'
+import products from './content/products'
 
 const CACHE_URL = 'https://imageproxy-grbdbenbba-uc.a.run.app'
 const DOWNLOAD_URL = 'https://webframe-image-cache.edgeapp.net'
@@ -10,8 +12,9 @@ const DOWNLOAD_URL = 'https://webframe-image-cache.edgeapp.net'
 
 export default {
   getSiteData: () => ({
-    siteTitle: 'React Static',
-    metaDescription: 'A progressive static-site framework for React',
+    siteTitle: 'Webframe',
+    metaDescription: 'A showcase of beautiful and well designed web app screens for design inspiration.',
+    social: { twitter: 'calummoore' },
     categories,
     CACHE_URL,
     DOWNLOAD_URL,
@@ -31,11 +34,12 @@ export default {
     const files = gcfiles.map(file => {
       const { name, metadata } = file.metadata
       // appname-cat1-cat2.png
-      const [product, categoryStr] = name.split('.')[0].split('-')
+      const [productId, ...categories] = name.split('.')[0].split('-')
+      const lookup = products[productId] || {}
       return {
         name,
-        product,
-        categories: categoryStr.split('-'),
+        product: { id: productId, ...lookup },
+        categories,
         meta: metadata,
         src: `https://storage.googleapis.com/webframe-screens/${name}`,
       }
@@ -51,12 +55,14 @@ export default {
       screens: undefined,
     }))
 
-    const products = uniq(map(files, ({ product }) => product))
-    const productsWithScreens = products.map(prod => {
+    const productsArr = uniq(map(files, ({ product }) => product.id))
+    const productsWithScreens = productsArr.map(prod => {
+      const lookup = products[prod] || {}
       return {
-        id: prod,
         name: prod,
-        screens: files.filter(({ product }) => product === prod)
+        ...lookup,
+        id: prod,
+        screens: files.filter(({ product }) => product.id === prod),
       }
     })
     const productsWithOneScreen = productsWithScreens.map(prod => ({
@@ -64,12 +70,12 @@ export default {
       screen: prod.screens && prod.screens[0],
       screens: undefined,
     })) 
-    console.log(productsWithOneScreen)
+
+    console.log(productsWithScreens)
 
     return [
       {
         path: '/',
-        template: 'src/containers/Screens',
         getData: () => ({
           screens: files,
         }),
@@ -119,4 +125,20 @@ export default {
     require.resolve('react-static-plugin-reach-router'),
     require.resolve('react-static-plugin-sitemap'),
   ],
+  Document: ({
+    Html,
+    Head,
+    Body,
+    children,
+    state: { siteData, renderMeta },
+  }) => (
+    <Html lang="en-US">
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Webframe - beautiful web app screenshots for design inspiration!</title>
+      </Head>
+      <Body>{children}</Body>
+    </Html>
+  ),
 }

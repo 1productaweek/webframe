@@ -3,10 +3,10 @@ import { useRouteData } from 'react-static'
 import { css } from '@emotion/core'
 import { Link } from 'components/Router'
 // import tw from 'tailwind.macro'
-import List from 'components/List'
 import Layout from 'components/Layout'
+import List from 'components/List'
 
-function Category () {
+function Screens () {
   const { parentTitle, parentPath, title, screens } = useRouteData()
   const hasScreens = screens && screens.length
   return (
@@ -21,4 +21,4 @@ function Category () {
   )
 }
 
-export default Category
+export default Screens

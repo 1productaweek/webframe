@@ -1,16 +1,58 @@
 export default [{
   id: 'home',
-  name: 'Home',
+  name: 'Landing',
 }, {
   id: 'pricing',
   name: 'Pricing',
-}, {
-  id: 'billing',
-  name: 'Billing',
 }, {
   id: 'plans',
   name: 'Plans',
 }, {
   id: 'login',
   name: 'Login',
+}, {
+  id: 'intro',
+  name: 'Intro',
+}, {
+  id: 'dashboard',
+  name: 'Dashboards',
+}, {
+  id: 'forgot',
+  name: 'Forgot Password',
+}, {
+  id: 'invite',
+  name: 'Invites',
+}, {
+  id: 'onboarding',
+  name: 'Onboarding',
+}, {
+  id: 'payment',
+  name: 'Payment',
+}, {
+  id: 'profile',
+  name: 'Profile',
+}, {
+  id: 'record',
+  name: 'Record',
+}, {
+  id: 'referral',
+  name: 'Referral'
+}, {
+  id: 'search',
+  name: 'Search',
+}, {
+  id: 'settings',
+  name: 'Settings',
+}, {
+  id: 'signup',
+  name: 'Signup',
+}, {
+  id: 'templates',
+  name: 'Templates',
+}, {
+  id: 'terms',
+  name: 'T&C',
+}, {
+  id: 'workspace',
+  name: 'Workspaces',
 }]

@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouteData, useSiteData } from 'react-static'
 import { css } from '@emotion/core'
 // import tw from 'tailwind.macro'
+import Seo from 'components/Seo'
 import Layout from 'components/Layout'
 import { Row, Col } from 'components/grid'
 import ImageListItem from 'components/ImageListItem'
@@ -12,6 +13,7 @@ export default function Categories () {
   
   return (
     <Layout>
+      <Seo title='Categories' />
       <h2>Categories</h2>
       <div css={css`margin-top: 1em;`}>
         <Row gutter={2}>
