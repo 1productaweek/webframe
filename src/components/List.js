@@ -1,12 +1,12 @@
 import React from 'react'
+import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
 import useModal from 'components/modals/useModal'
 import tw from 'tailwind.macro'
 import ScreenModal from './ScreenModal'
 
-const CACHE_URL_PREFIX = `https://imageproxy-grbdbenbba-uc.a.run.app`
-
 function List ({ items }) {
+  const { CACHE_URL } = useSiteData()
   const showModal = useModal(ScreenModal)
 
   const itemsEl = (items || []).map(({ src, name, product }, i) => (
@@ -15,7 +15,7 @@ function List ({ items }) {
       onClick={() => showModal({ src, name, product })}
       css={styles.screen} 
       style={{ maxHeight: 500 + 200 * Math.random()  }}>
-      <img src={`${CACHE_URL_PREFIX}/1200x/${src}`} alt={name} />
+      <img src={`${CACHE_URL}/1200x/${src}`} alt={name} />
     </div>
   ))
   return (

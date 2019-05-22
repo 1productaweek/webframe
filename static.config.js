@@ -4,13 +4,17 @@ import map from 'lodash/map'
 import uniq from 'lodash/uniq'
 import categories from './content/categories'
 
-const CACHE_URL_PREFIX = `https://imageproxy-grbdbenbba-uc.a.run.app`
+const CACHE_URL = 'https://imageproxy-grbdbenbba-uc.a.run.app'
+const DOWNLOAD_URL = 'https://webframe-image-cache.edgeapp.net'
+
 
 export default {
   getSiteData: () => ({
     siteTitle: 'React Static',
     metaDescription: 'A progressive static-site framework for React',
     categories,
+    CACHE_URL,
+    DOWNLOAD_URL,
   }),
   getRoutes: async () => {
 
@@ -41,6 +45,11 @@ export default {
       cat.screens = files.filter(({ categories }) => categories.indexOf(cat.id) !== -1)
       return cat
     })
+    const categoriesWithOneScreen = categoriesWithScreens.map((cat) => ({
+      ...cat,
+      screen: cat.screens[0],
+      screens: undefined,
+    }))
 
     const products = uniq(map(files, ({ product }) => product))
     const productsWithScreens = products.map(prod => {
@@ -50,7 +59,12 @@ export default {
         screens: files.filter(({ product }) => product === prod)
       }
     })
-
+    const productsWithOneScreen = productsWithScreens.map(prod => ({
+      ...prod,
+      screen: prod.screens && prod.screens[0],
+      screens: undefined,
+    })) 
+    console.log(productsWithOneScreen)
 
     return [
       {
@@ -63,12 +77,14 @@ export default {
       {
         path: '/categories',
         getData: () => ({
-          categories,
+          categories: categoriesWithOneScreen,
         }),
         children: categoriesWithScreens.map(category => ({
           path: `/${category.id}`,
           template: 'src/containers/Screens',
           getData: () => ({
+            parentTitle: 'Categories',
+            parentPath: '/categories',
             title: category.name,
             screens: category.screens,
           }),
@@ -77,13 +93,15 @@ export default {
       {
         path: '/products',
         getData: () => ({
-          products,
+          products: productsWithOneScreen,
           categories,
         }),
         children: productsWithScreens.map(prod => ({
           path: `/${prod.id}`,
           template: 'src/containers/Screens',
           getData: () => ({
+            parentTitle: 'Products',
+            parentPath: '/products',
             title: prod.name,
             screens: prod.screens,
           }),

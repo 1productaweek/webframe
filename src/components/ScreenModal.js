@@ -1,10 +1,10 @@
 import React from 'react'
+import { useSiteData } from 'react-static'
 import Modal from 'react-modal'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
+import { Link } from 'components/Router'
 import Button from './Button'
-
-const DOWNLOAD_URL = `https://webframe-image-cache.edgeapp.net`
 
 const customStyles = {
   content : {
@@ -19,6 +19,7 @@ Modal.setAppElement('#root')
 const AButton = Button.withComponent('a')
 
 function ScreenModal ({ isOpen, onCancel, product, src, name }) {
+  const { DOWNLOAD_URL } = useSiteData()
   return (
     <>
       <Modal
@@ -31,7 +32,7 @@ function ScreenModal ({ isOpen, onCancel, product, src, name }) {
       </Modal>
       <div css={styles.footer}>
         <AButton href={`${DOWNLOAD_URL}?image=${src}`} download={name}>Download</AButton>
-        <a css={styles.viewAll} href={`/products/${product}`}>View all {product}</a>
+        <Link onClick={onCancel} css={styles.viewAll} to={`/products/${product}`}>View all {product}</Link>
       </div>
     </>
   )

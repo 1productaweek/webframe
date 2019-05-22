@@ -18,7 +18,9 @@ function SideNav () {
   })
   return (
     <div>
-      <div css={styles.title}>CATEGORIES</div>
+      <Link to='/categories'>
+        <div css={styles.title}>CATEGORIES</div>
+      </Link>
       {categoriesEl}
     </div>
   )

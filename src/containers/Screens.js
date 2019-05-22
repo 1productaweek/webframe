@@ -1,17 +1,22 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { css } from '@emotion/core'
+import { Link } from 'components/Router'
 // import tw from 'tailwind.macro'
 import List from 'components/List'
 import Layout from 'components/Layout'
 
 function Category () {
-  const { title, screens } = useRouteData()
+  const { parentTitle, parentPath, title, screens } = useRouteData()
   const hasScreens = screens && screens.length
   return (
     <Layout>
-      {title && <h2 css={css`margin-bottom: 1em;`}>{ title }</h2>}
-      {hasScreens ? <List items={screens} /> : <p>No screens found!</p>}
+      {parentTitle && <Link css={css`display: inline-block; margin-right: 10px;`} to={parentPath}><h2>{ parentTitle }</h2></Link>}
+      {parentTitle && <h2 css={css`display: inline-block; margin-right: 10px; color: #aaa;`}> / </h2>}
+      {title && <h2 css={css`display: inline-block;`}>{ title }</h2>}
+      <div css={css`margin-top: 1em;`}>
+        {hasScreens ? <List items={screens} /> : <p>No screens found!</p>}
+      </div>
     </Layout>
   )
 }

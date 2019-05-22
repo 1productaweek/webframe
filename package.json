@@ -6,7 +6,8 @@
     "stage": "react-static build --staging",
     "build": "react-static build",
     "analyze": "react-static build --analyze",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "deploy": "SOURCE_MAPS=source-map NODE_ENV=production yarn build && firebase deploy -P default"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -14,6 +15,9 @@
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
     "babel-plugin-tailwind-components": "^1.0.0-alpha.0",
+    "basscss-grid": "2.0.0",
+    "basscss-margin": "^1.0.9",
+    "basscss-padding": "^1.1.3",
     "lodash": "^4.17.11",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",

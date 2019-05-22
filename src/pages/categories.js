@@ -1,20 +1,31 @@
 import React from 'react'
-import { useRouteData } from 'react-static'
-//
-import { Link } from 'components/Router'
+import { useRouteData, useSiteData } from 'react-static'
+import { css } from '@emotion/core'
+// import tw from 'tailwind.macro'
+import Layout from 'components/Layout'
+import { Row, Col } from 'components/grid'
+import ImageListItem from 'components/ImageListItem'
 
 export default function Categories () {
   const { categories } = useRouteData()
+  const { CACHE_URL } = useSiteData()
+  
   return (
-    <div>
-      All Categories:
-      <ul>
-        {(categories || []).map(cat => (
-          <li key={cat.id}>
-            <Link to={`/categories/${cat.id}/`}>{cat.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Layout>
+      <h2>Categories</h2>
+      <div css={css`margin-top: 1em;`}>
+        <Row gutter={2}>
+          {(categories || []).map(cat => (
+            <Col gutter={2} col={12} sm={4} mb={2} key={cat.id}>
+              <ImageListItem
+                title={cat.name}
+                src={cat.screen ? `${CACHE_URL}/1200x/${cat.screen.src}` : ''}
+                to={`/categories/${cat.id}`}
+              />
+            </Col>
+          ))}
+        </Row>
+      </div>
+    </Layout>
   )
 }
