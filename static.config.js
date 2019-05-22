@@ -4,6 +4,8 @@ import map from 'lodash/map'
 import uniq from 'lodash/uniq'
 import categories from './content/categories'
 
+const CACHE_URL_PREFIX = `https://imageproxy-grbdbenbba-uc.a.run.app`
+
 export default {
   getSiteData: () => ({
     siteTitle: 'React Static',
@@ -20,8 +22,10 @@ export default {
     const bucket = storage.bucket('webframe-screens')
     const [gcfiles] = await bucket.getFiles()
 
+    // console.log(gcfiles.map(({ metadata }) => metadata))
+
     const files = gcfiles.map(file => {
-      const { name, metadata, mediaLink } = file.metadata
+      const { name, metadata } = file.metadata
       // appname-cat1-cat2.png
       const [product, categoryStr] = name.split('.')[0].split('-')
       return {
@@ -29,7 +33,7 @@ export default {
         product,
         categories: categoryStr.split('-'),
         meta: metadata,
-        src: mediaLink,
+        src: `https://storage.googleapis.com/webframe-screens/${name}`,
       }
     })
 
