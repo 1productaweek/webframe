@@ -1,3 +1,5 @@
-# React-Static - Basic Template
+# Webframe
 
-To use this template, run `react-static create` and use the `basic` template.
+A showcase of beautiful and well designed web app screens for design inspiration.
+
+This is the static website generator (using react-static) for Webframe.

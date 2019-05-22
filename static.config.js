@@ -42,8 +42,8 @@ export default {
       return cat
     })
 
-    const productsArr = uniq(map(files, ({ product }) => product))
-    const productsWithScreens = productsArr.map(prod => {
+    const products = uniq(map(files, ({ product }) => product))
+    const productsWithScreens = products.map(prod => {
       return {
         id: prod,
         name: prod,
@@ -77,6 +77,7 @@ export default {
       {
         path: '/products',
         getData: () => ({
+          products,
           categories,
         }),
         children: productsWithScreens.map(prod => ({

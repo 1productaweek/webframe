@@ -1,0 +1,61 @@
+{
+  "entry": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/src/index.js",
+  "prefetchRate": 5,
+  "maxThreads": null,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "plugins": [
+    [
+      "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules/react-static-plugin-source-filesystem/node.api.js",
+      {
+        "location": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/src/pages"
+      }
+    ],
+    "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules/react-static-plugin-reach-router/browser.api.js",
+    "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules/react-static-plugin-sitemap/dist/node.api.js",
+    "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe"
+  ],
+  "paths": {
+    "ROOT": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe",
+    "SRC": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/src",
+    "DIST": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/dist",
+    "ASSETS": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/dist",
+    "PLUGINS": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/plugins",
+    "TEMP": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/tmp",
+    "ARTIFACTS": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/artifacts",
+    "PUBLIC": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/public",
+    "NODE_MODULES": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules",
+    "EXCLUDE_MODULES": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules",
+    "PACKAGE": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/package.json",
+    "HTML_TEMPLATE": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/dist/index.html",
+    "STATIC_DATA": "/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/dist/staticData"
+  },
+  "devServer": {
+    "host": "http://localhost",
+    "port": 3000
+  },
+  "babelExcludes": [],
+  "siteRoot": "",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}
