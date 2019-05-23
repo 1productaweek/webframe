@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
-import useModal from 'components/modals/useModal'
 import tw from 'tailwind.macro'
+import useModal from 'components/modals/useModal'
 import ScreenModal from './ScreenModal'
 import { Row, Col } from './grid'
 

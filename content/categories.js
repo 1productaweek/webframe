@@ -23,6 +23,12 @@ export default [{
   id: 'invite',
   name: 'Invites',
 }, {
+  id: 'list',
+  name: 'Lists',
+}, {
+  id: 'modal',
+  name: 'Modals',
+}, {
   id: 'onboarding',
   name: 'Onboarding',
 }, {
@@ -32,8 +38,14 @@ export default [{
   id: 'profile',
   name: 'Profile',
 }, {
+  id: 'addrecord',
+  name: 'Add Record',
+}, {
   id: 'record',
   name: 'Record',
+}, {
+  id: 'placeholder',
+  name: 'Placeholders',
 }, {
   id: 'referral',
   name: 'Referral'
@@ -41,14 +53,23 @@ export default [{
   id: 'search',
   name: 'Search',
 }, {
+  id: 'calendar',
+  name: 'Calendar',
+}, {
   id: 'settings',
   name: 'Settings',
 }, {
   id: 'signup',
   name: 'Signup',
 }, {
+  id: 'status',
+  name: 'Status',
+}, {
   id: 'templates',
   name: 'Templates',
+}, {
+  id: 'integrations',
+  name: 'Integrations',
 }, {
   id: 'terms',
   name: 'T&C',

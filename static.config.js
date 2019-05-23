@@ -6,8 +6,9 @@ import uniq from 'lodash/uniq'
 import categories from './content/categories'
 import products from './content/products'
 
-const CACHE_URL = 'https://imageproxy-grbdbenbba-uc.a.run.app'
+const CACHE_URL = 'https://cdn.webframe.xyz'
 const DOWNLOAD_URL = 'https://webframe-image-cache.edgeapp.net'
+const SRC_URL = 'https://storage.googleapis.com/webframe-screens'
 
 
 export default {
@@ -18,6 +19,7 @@ export default {
     categories,
     CACHE_URL,
     DOWNLOAD_URL,
+    SRC_URL,
   }),
   getRoutes: async () => {
 
@@ -41,7 +43,7 @@ export default {
         product: { id: productId, ...lookup },
         categories,
         meta: metadata,
-        src: `https://storage.googleapis.com/webframe-screens/${name}`,
+        src: `${SRC_URL}/${name}`,
       }
     })
 
@@ -71,13 +73,11 @@ export default {
       screens: undefined,
     })) 
 
-    console.log(productsWithScreens)
-
     return [
       {
         path: '/',
         getData: () => ({
-          screens: files,
+          screens: files.sort(() => 1 + Math.random() * -2),
         }),
       },
       {
