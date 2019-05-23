@@ -31,4 +31,16 @@ export default {
     name: 'Zapier',
     domain: 'zapier.com',
   },
+  podia: {
+    name: 'Podia',
+    domain: 'podia.com',
+  },
+  sentry: {
+    name: 'Sentry',
+    domain: 'sentry.com',
+  },
+  mixpanel: {
+    name: 'Mixpanel',
+    domain: 'mixpanel.com',
+  },
 }

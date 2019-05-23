@@ -2054,6 +2054,18 @@ var useFirebaseSync = __webpack_require__(32);
   zapier: {
     name: 'Zapier',
     domain: 'zapier.com'
+  },
+  podia: {
+    name: 'Podia',
+    domain: 'podia.com'
+  },
+  sentry: {
+    name: 'Sentry',
+    domain: 'sentry.com'
+  },
+  mixpanel: {
+    name: 'Mixpanel',
+    domain: 'mixpanel.com'
   }
 });
 // CONCATENATED MODULE: /Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/src/containers/Dashboard.js
