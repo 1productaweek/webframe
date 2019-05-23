@@ -2,6 +2,7 @@ import React from 'react'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
+import LazyLoad from 'react-lazyload'
 import useModal from 'components/modals/useModal'
 import ScreenModal from './ScreenModal'
 import { Row, Col } from './grid'
@@ -11,13 +12,14 @@ function List ({ items }) {
   const showModal = useModal(ScreenModal)
 
   const itemsEl = (items || []).map(({ src, name, product }, i) => (
-    <div 
-      key={src || i}
-      onClick={() => showModal({ src, name, product })}
-      css={styles.screen} 
-      style={{ maxHeight: 500 + 200 * Math.random()  }}>
-      <img src={`${CACHE_URL}/1200x/${src}`} alt={name} />
-    </div>
+    <LazyLoad key={src || i} height={200} offset={200}>
+      <div 
+        onClick={() => showModal({ src, name, product })}
+        css={styles.screen} 
+        style={{ minHeight: 50, maxHeight: 500 + 200 * Math.random()  }}>
+        <img src={`${CACHE_URL}/1200x/${src}`} alt={name} />
+      </div>
+    </LazyLoad>
   ))
   return (
     <Row gutter={2}>

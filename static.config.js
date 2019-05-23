@@ -35,8 +35,11 @@ export default {
 
     const files = gcfiles.map(file => {
       const { name, metadata } = file.metadata
+      const productId = metadata.product
+      const categories = metadata.categories ? metadata.categories.split(',') : []
+      console.log(productId, categories)
       // appname-cat1-cat2.png
-      const [productId, ...categories] = name.split('.')[0].split('-')
+      // const [productId, ...categories] = name.split('.')[0].split('-')
       const lookup = products[productId] || {}
       return {
         name,
