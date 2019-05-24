@@ -12,9 +12,8 @@ function List ({ items }) {
   const showModal = useModal(ScreenModal)
 
   const itemsEl = (items || []).map(({ src, name, maxHeight, product }, i) => (
-    <LazyLoad height={200} offset={[0, 400]} once resize>
+    <LazyLoad key={src || i} height={200} offset={[0, 400]} once resize>
       <div 
-        key={src || i} 
         onClick={() => showModal({ src, name, product })}
         css={styles.screen} 
         style={{ minHeight: 50, maxHeight }}>

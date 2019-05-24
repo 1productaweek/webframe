@@ -130,14 +130,29 @@ export default {
     Body,
     children,
     state: { siteData, renderMeta },
-  }) => (
-    <Html lang="en-US">
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Webframe - beautiful web app screenshots for design inspiration!</title>
-      </Head>
-      <Body>{children}</Body>
-    </Html>
-  ),
+  }) => {
+    const embeds = process.env.REACT_STATIC_ENV !== 'development' ? `
+      // Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-140788802-1');
+    ` : ''
+    return (
+      <Html lang="en-US">
+        <Head>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Webframe - beautiful web app screenshots for design inspiration!</title>
+        </Head>
+        <Body>
+          {children}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140788802-1"></script>
+          <script async dangerouslySetInnerHTML={{
+            __html: embeds,
+          }} />
+        </Body>
+      </Html>
+    )
+  },
 }

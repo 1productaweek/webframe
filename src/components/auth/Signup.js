@@ -31,9 +31,9 @@ export default function Signup ({ onDone }) {
     <div css={styles.box}>
       <h2 css={styles.title}>Signup to Webframe! <span aria-label='love' role='img'>😍</span></h2>
       <p css={styles.sub}>Save your screens and lots of other goodies!</p>
-      <Label for='emailInput'>E-mail</Label>
+      <Label htmlFor='emailInput'>E-mail</Label>
       <Input onChange={e => setFormData({ ...formData, email: e.target.value })} value={formData.email} id='emailInput' placeholder='awesome@person.com' type='email' />
-      <Label for='passwordInput'>Password</Label>
+      <Label htmlFor='passwordInput'>Password</Label>
       <Input onChange={e => setFormData({ ...formData, password: e.target.value })} value={formData.password} id='passwordInput' placeholder='super secret password' type='password' />
       <Button onClick={onSubmit} css={css`margin-top: 1em; margin-bottom: 1em; font-size: 1em;`}>Signup</Button>
       { formData.error && <p css={css`color: red;`}>Error: {formData.error}</p> }
