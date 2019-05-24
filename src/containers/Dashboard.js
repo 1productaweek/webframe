@@ -30,7 +30,7 @@ function Dashboard () {
   }
   
   return (
-    <div css={css`max-width: 1200px; margin: 0 auto; padding: 1em;`}>
+    <div css={css`max-width: 1200px; margin: 0 auto; padding: 1em; margin-bottom: 100px;`}>
       <h2 css={styles.title}>Saved Screens <span role='img' aria-label='saved'>🎉</span></h2>
       <List items={items} />
       {(!items || !items.length) && <p css={css`color: #777; text-align: center;`}>No saved screenshots yet! Go to <Link to='/'>Home</Link> and click on any screenshot to save.</p>}

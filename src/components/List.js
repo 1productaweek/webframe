@@ -11,12 +11,13 @@ function List ({ items }) {
   const { CACHE_URL } = useSiteData()
   const showModal = useModal(ScreenModal)
 
-  const itemsEl = (items || []).map(({ src, name, product }, i) => (
-    <LazyLoad key={src || i} height={200} offset={200}>
+  const itemsEl = (items || []).map(({ src, name, maxHeight, product }, i) => (
+    <LazyLoad height={200} offset={[0, 400]} once resize>
       <div 
+        key={src || i} 
         onClick={() => showModal({ src, name, product })}
         css={styles.screen} 
-        style={{ minHeight: 50, maxHeight: 500 + 200 * Math.random()  }}>
+        style={{ minHeight: 50, maxHeight }}>
         <img src={`${CACHE_URL}/1200x/${src}`} alt={name} />
       </div>
     </LazyLoad>

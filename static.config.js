@@ -31,15 +31,10 @@ export default {
     const bucket = storage.bucket('webframe-screens')
     const [gcfiles] = await bucket.getFiles()
 
-    // console.log(gcfiles.map(({ metadata }) => metadata))
-
     const files = gcfiles.map(file => {
       const { name, metadata } = file.metadata
       const productId = metadata.product
       const categories = metadata.categories ? metadata.categories.split(',') : []
-      console.log(productId, categories)
-      // appname-cat1-cat2.png
-      // const [productId, ...categories] = name.split('.')[0].split('-')
       const lookup = products[productId] || {}
       return {
         name,
@@ -47,6 +42,7 @@ export default {
         categories,
         meta: metadata,
         src: `${SRC_URL}/${name}`,
+        maxHeight: 500 + 200 * Math.random(),
       }
     })
 

@@ -1,5 +1,5 @@
 export default [{
-  id: 'home',
+  id: 'landing',
   name: 'Landing',
 }, {
   id: 'pricing',

@@ -14,7 +14,7 @@ export default function Nav () {
       <Link to="/">
         <img width={101} src={logo} alt='Webframe Logo' />
       </Link>
-      <p css={css`${styles.tagline} top: -2px;`}>Discover beautiful web app design patterns</p>
+      <p css={css`${styles.tagline} top: -2px;`}>Discover and be inspired by beautiful webapp designs</p>
       {!userAuth && (
         <div css={styles.menu}>
           <NavLink to='/signup'>Signup</NavLink>

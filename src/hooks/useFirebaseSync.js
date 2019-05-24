@@ -8,6 +8,6 @@ export default (ref) => {
     return ref.onSnapshot(doc => {
       setState(doc)
     })
-  }, [ref])
+  }, [ref && ref.path])
   return ref ? state : null
 }
