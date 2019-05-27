@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
-import { Link } from 'components/Router'
+import { Link } from 'components/base/Router'
 
 export default function ImageListItem ({ to, title, src }) {
   return (

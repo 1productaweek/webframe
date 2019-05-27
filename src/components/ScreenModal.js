@@ -4,7 +4,7 @@ import { useSiteData } from 'react-static'
 import Modal from 'react-modal'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
-import { Link } from 'components/Router'
+import { Link } from 'components/base/Router'
 import useModal from 'components/modals/useModal'
 import SignupModal from './auth/SignupModal'
 import Button from './form/Button'
@@ -42,6 +42,7 @@ function ScreenModal ({ isOpen, onCancel, product, src, name }) {
       active: true,
       name,
     }).catch(console.error)
+    await db.collection('screens').doc(user.uid).set()
   }
 
   const saveBtnStyle = isSaved ? { background: '#fff', borderColor: '#4299e1', color: '#4299e1' } : {}

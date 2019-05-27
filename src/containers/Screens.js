@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { css } from '@emotion/core'
-import { Link } from 'components/Router'
+import { Link } from 'components/base/Router'
 // import tw from 'tailwind.macro'
 import Layout from 'components/Layout'
 import List from 'components/List'

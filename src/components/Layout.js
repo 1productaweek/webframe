@@ -2,7 +2,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
 import SideNav from 'components/SideNav'
-import Promo from 'components/Promo'
 
 function Layout ({ children }) {
   return (
@@ -13,7 +12,6 @@ function Layout ({ children }) {
     <div css={styles.right}>
       {children}
     </div>
-    <Promo />
   </div>
   )
 }

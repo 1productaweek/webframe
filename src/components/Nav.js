@@ -2,7 +2,7 @@ import React from 'react'
 import firebase from 'firebase'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
-import { Link, NavLink } from 'components/Router'
+import { Link, NavLink } from 'components/base/Router'
 import logo from 'img/logo.png'
 import useFirebaseAuth from 'hooks/useFirebaseAuth'
 

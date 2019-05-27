@@ -3,7 +3,7 @@ import firebase from 'firebase'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
-import { Link } from 'components/Router'
+import { Link } from 'components/base/Router'
 import List from 'components/List'
 import useFirebaseSync from 'hooks/useFirebaseSync'
 import products from '../../content/products'
@@ -33,7 +33,8 @@ function Dashboard () {
     <div css={css`max-width: 1200px; margin: 0 auto; padding: 1em; margin-bottom: 100px;`}>
       <h2 css={styles.title}>Saved Screens <span role='img' aria-label='saved'>🎉</span></h2>
       <List items={items} />
-      {(!items || !items.length) && <p css={css`color: #777; text-align: center;`}>No saved screenshots yet! Go to <Link to='/'>Home</Link> and click on any screenshot to save.</p>}
+      { !collection ? <p css={css`color: #777; text-align: center;`}>Loading...</p> : ''}
+      {( collection && (!items || !items.length)) && <p css={css`color: #777; text-align: center;`}>No saved screenshots yet! Go to <Link to='/'>Home</Link> and click on any screenshot to save.</p>}
     </div>
   )
 }

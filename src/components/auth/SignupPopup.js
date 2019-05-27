@@ -2,10 +2,12 @@ import { useEffect } from 'react'
 import useModal from 'components/modals/useModal'
 import SignupModal from './SignupModal'
 
-const localStorage = window.localStorage
-
 export default function SignupPopup () {
   const showModal = useModal(SignupModal)
+  let localStorage = null
+  if (typeof window !== 'undefined') {
+    localStorage = window && window.localStorage
+  }
 
   useEffect(() => {
     setTimeout(() => {

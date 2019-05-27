@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'components/Router'
+import { Link, NavLink } from 'components/base/Router'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
 import tw from 'tailwind.macro'

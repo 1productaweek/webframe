@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 // Required forreact-modal side-effects
 import 'firebase/firestore'
 

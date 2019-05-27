@@ -5,6 +5,17 @@ import map from 'lodash/map'
 import uniq from 'lodash/uniq'
 import categories from './content/categories'
 import products from './content/products'
+import * as admin from 'firebase-admin'
+import serviceAccount from './webframe-firebase-service-account.json'
+
+if (admin.apps.length === 0) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://webframe.firebaseio.com"
+  })
+}
+
+const db = admin.firestore()
 
 const CACHE_URL = 'https://cdn.webframe.xyz'
 const DOWNLOAD_URL = 'https://webframe-image-cache.edgeapp.net'
@@ -22,6 +33,14 @@ export default {
     SRC_URL,
   }),
   getRoutes: async () => {
+    // Get scores from Firebase
+    const screens = await db.collectionGroup('screens').get()
+    const scores = {}
+
+    screens.forEach(screen => {
+      if (!scores[screen.id]) scores[screen.id] = 0
+      scores[screen.id] += 1
+    })
 
     // Creates a client
     const storage = new Storage({
@@ -36,15 +55,17 @@ export default {
       const productId = metadata.product
       const categories = metadata.categories ? metadata.categories.split(',') : []
       const lookup = products[productId] || {}
+      const score = scores[file.name]
       return {
         name,
+        score: score || 0,
         product: { id: productId, ...lookup },
         categories,
         meta: metadata,
         src: `${SRC_URL}/${name}`,
         maxHeight: 500 + 200 * Math.random(),
       }
-    })
+    }).sort((a, b) => b.score - a.score)
 
     const categoriesWithScreens = categories.map(cat => {
       cat.screens = files.filter(({ categories }) => categories.indexOf(cat.id) !== -1)
@@ -76,7 +97,7 @@ export default {
       {
         path: '/',
         getData: () => ({
-          screens: files.sort(() => 1 + Math.random() * -2),
+          screens: files,
         }),
       },
       {
