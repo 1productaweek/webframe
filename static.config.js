@@ -67,6 +67,8 @@ export default {
       }
     }).sort((a, b) => b.score - a.score)
 
+    console.log(`Total screens: ${files.length}`)
+
     const categoriesWithScreens = categories.map(cat => {
       cat.screens = files.filter(({ categories }) => categories.indexOf(cat.id) !== -1)
       return cat

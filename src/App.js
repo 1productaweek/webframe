@@ -42,7 +42,7 @@ function App() {
           <NoOp path='signup' />
           { !user && <SignupPopup path="*" /> }
         </Router>
-        <Promo name='1ProductAWeek' href='https://1productaweek.com' />
+        <Promo name='1ProductAWeek' href='https://1productaweek.com/webframe' />
       </ModalProvider>
     </Root>
   )

@@ -2645,7 +2645,10 @@ var NoOp = function NoOp() {
 
 function App() {
   var user = Object(useFirebaseAuth["a" /* default */])();
-  return Object(core_["jsx"])(external_react_static_["Root"], null, Object(core_["jsx"])(ModalProvider["b" /* default */], null,  false && false, Object(core_["jsx"])(Nav, null), Object(core_["jsx"])("div", {
+  return Object(core_["jsx"])(external_react_static_["Root"], null, Object(core_["jsx"])(ModalProvider["b" /* default */], null, Object(core_["jsx"])(base_ProductHunt, {
+    name: "Webframe",
+    id: "webframe"
+  }), Object(core_["jsx"])(Nav, null), Object(core_["jsx"])("div", {
     style: {
       marginBottom: '4em'
     }
