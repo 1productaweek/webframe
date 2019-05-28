@@ -5,11 +5,21 @@ import { css } from '@emotion/core'
 import tw from 'tailwind.macro'
 
 function SideNav () {
-  const { categories } = useSiteData()
+  const { categories, products } = useSiteData()
   const categoriesEl = categories.map(({ id, name }) => {
     return (
       <div key={id} css={styles.links}>
         <NavLink to={`/categories/${id}`}>
+          {name}
+        </NavLink>
+      </div>
+      
+    )
+  })
+  const productsEl = products.map(({ id, name }) => {
+    return (
+      <div key={id} css={styles.links}>
+        <NavLink to={`/products/${id}`}>
           {name}
         </NavLink>
       </div>
@@ -22,6 +32,12 @@ function SideNav () {
         <div css={styles.title}>CATEGORIES</div>
       </Link>
       {categoriesEl}
+      <div css={css`margin-top: 3em;`}>
+        <Link to='/products'>
+          <div css={styles.title}>PRODUCTS</div>
+        </Link>
+        {productsEl}
+      </div>
     </div>
   )
 }

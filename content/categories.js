@@ -44,6 +44,9 @@ export default [{
   id: 'record',
   name: 'Record',
 }, {
+  id: 'editor',
+  name: 'Editor',
+}, {
   id: 'placeholder',
   name: 'Placeholders',
 }, {
@@ -62,6 +65,24 @@ export default [{
   id: 'signup',
   name: 'Signup',
 }, {
+  id: 'blog',
+  name: 'Blogs',
+}, {
+  id: 'productupdates',
+  name: 'Product Updates',
+}, {
+  id: 'roadmap',
+  name: 'Roadmap',
+}, {
+  id: 'support',
+  name: 'Support',
+}, {
+  id: 'faq',
+  name: 'Faq',
+}, {
+  id: 'docs',
+  name: 'Docs',
+}, {
   id: 'status',
   name: 'Status',
 }, {
@@ -70,6 +91,12 @@ export default [{
 }, {
   id: 'integrations',
   name: 'Integrations',
+}, {
+  id: 'comparison',
+  name: 'Comparisons',
+}, {
+  id: 'press',
+  name: 'Press',
 }, {
   id: 'terms',
   name: 'T&C',

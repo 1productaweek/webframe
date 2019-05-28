@@ -1,3 +1,4 @@
 node_modules
 *service-account*
 dist
+artifacts

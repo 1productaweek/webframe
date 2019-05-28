@@ -28,6 +28,7 @@ export default {
     metaDescription: 'A showcase of beautiful and well designed web app screens for design inspiration.',
     social: { twitter: 'calummoore' },
     categories,
+    products: map(products, (prod, id) => ({ ...prod, id })).sort((a, b) => a.id > b.id),
     CACHE_URL,
     DOWNLOAD_URL,
     SRC_URL,
