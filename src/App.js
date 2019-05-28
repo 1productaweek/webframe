@@ -23,7 +23,7 @@ function App() {
   return (
     <Root>
       <ModalProvider>
-        { false && <ProductHunt name='Webframe' id='playdate-2' /> }
+        <ProductHunt name='Webframe' id='webframe' />
         <Nav />
         <div style={{marginBottom: '4em'}}>
           <React.Suspense fallback={<em>Loading...</em>}>

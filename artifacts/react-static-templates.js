@@ -1,18 +1,59 @@
 
 
-  
-// Template Map
-export default {
-  '../src/pages/404.js': require('../src/pages/404.js').default,
-'../src/pages/about.js': require('../src/pages/about.js').default,
-'../src/pages/categories.js': require('../src/pages/categories.js').default,
-'../src/pages/index.js': require('../src/pages/index.js').default,
-'../src/pages/login.js': require('../src/pages/login.js').default,
-'../src/pages/products.js': require('../src/pages/products.js').default,
-'../src/pages/signup.js': require('../src/pages/signup.js').default,
-'../src/pages/test.js': require('../src/pages/test.js').default,
-'../src/containers/Screens': require('../src/containers/Screens').default
+import React from 'react'
+import universal, { setHasBabelPlugin } from '/Users/calummoore/Drive/Projects/Flow/git/weekly/webframe/webframe/node_modules/react-universal-component/dist/index.js'
+
+setHasBabelPlugin()
+
+const universalOptions = {
+  loading: () => null,
+  error: props => {
+    console.error(props.error);
+    return <div>An error occurred loading this page's template. More information is available in the console.</div>;
+  },
+  ignoreBabelRename: true
 }
 
-export const notFoundTemplate = '../src/pages/404.js'
+const t_0 = universal(import('../src/pages/404.js'), universalOptions)
+      t_0.template = '../src/pages/404.js'
+      
+const t_1 = universal(import('../src/pages/about.js'), universalOptions)
+      t_1.template = '../src/pages/about.js'
+      
+const t_2 = universal(import('../src/pages/categories.js'), universalOptions)
+      t_2.template = '../src/pages/categories.js'
+      
+const t_3 = universal(import('../src/pages/index.js'), universalOptions)
+      t_3.template = '../src/pages/index.js'
+      
+const t_4 = universal(import('../src/pages/login.js'), universalOptions)
+      t_4.template = '../src/pages/login.js'
+      
+const t_5 = universal(import('../src/pages/products.js'), universalOptions)
+      t_5.template = '../src/pages/products.js'
+      
+const t_6 = universal(import('../src/pages/signup.js'), universalOptions)
+      t_6.template = '../src/pages/signup.js'
+      
+const t_7 = universal(import('../src/pages/test.js'), universalOptions)
+      t_7.template = '../src/pages/test.js'
+      
+const t_8 = universal(import('../src/containers/Screens'), universalOptions)
+      t_8.template = '../src/containers/Screens'
+      
+
+// Template Map
+export default {
+  '../src/pages/404.js': t_0,
+'../src/pages/about.js': t_1,
+'../src/pages/categories.js': t_2,
+'../src/pages/index.js': t_3,
+'../src/pages/login.js': t_4,
+'../src/pages/products.js': t_5,
+'../src/pages/signup.js': t_6,
+'../src/pages/test.js': t_7,
+'../src/containers/Screens': t_8
+}
+// Not Found Template
+export const notFoundTemplate = "../src/pages/404.js"
 

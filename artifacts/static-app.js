@@ -1221,6 +1221,10 @@ function ScreenModal(_ref2) {
               })["catch"](console.error);
 
             case 7:
+              _context.next = 9;
+              return db.collection('screens').doc(user.uid).set();
+
+            case 9:
             case "end":
               return _context.stop();
           }
