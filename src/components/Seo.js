@@ -2,11 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteData } from 'react-static'
+// import siteImage  from 'img/site-image.png'
 
 function SEO ({ description, lang, meta, title }) {
-  const { siteTitle, metaDescription, social } = useSiteData()
+  const { siteTitle, siteImage, metaDescription, social } = useSiteData()
 
   const desc = description || metaDescription
+
+  const image = siteImage ? [{
+    property: `og:image`,
+    content: siteImage,
+  }, {
+    name: `twitter:image`,
+    content: siteImage,
+  }] : []
 
   return (
     <Helmet
@@ -48,7 +57,7 @@ function SEO ({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: desc,
         },
-      ].concat(meta)}
+      ].concat(image).concat(meta)}
     />
   )
 }

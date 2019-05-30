@@ -25,6 +25,7 @@ export function Feedback () {
 
   const onSubmit = async (e) => {
     e.preventDefault()
+    if (!formData.email|| !formData.feedback) return alert('Email and message are required!')
     await db.collection('feedback').add(formData)
     setFormData({})
     setShow(false)

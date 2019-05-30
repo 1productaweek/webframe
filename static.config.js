@@ -25,8 +25,9 @@ const SRC_URL = 'https://storage.googleapis.com/webframe-screens'
 export default {
   getSiteData: () => ({
     siteTitle: 'Webframe',
-    metaDescription: 'A showcase of beautiful and well designed web app screens for design inspiration.',
-    social: { twitter: 'calummoore' },
+    metaDescription: 'A showcase of beautiful and well designed web app screens for design inspiration. Including screens from behind signup/paywalls! 😱',
+    social: { twitter: '1productaweek' },
+    siteImage: 'https://webframe.xyz/site-image.png',
     categories,
     products: map(products, (prod, id) => ({ ...prod, id })).sort((a, b) => a.id > b.id),
     CACHE_URL,

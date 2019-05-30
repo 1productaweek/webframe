@@ -101,6 +101,9 @@ export default [{
   id: 'terms',
   name: 'T&C',
 }, {
-  id: 'workspace',
-  name: 'Workspaces',
+  id: 'conversations',
+  name: 'Conversations',
+}, {
+  id: 'error',
+  name: 'Errors',
 }]

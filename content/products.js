@@ -171,4 +171,52 @@ export default {
     name: 'Segment',
     domain: 'segment.com',
   },
+  slite: {
+    name: 'Slite',
+    domain: 'slite.com',
+  },
+  scriby: {
+    name: 'Scriby',
+    domain: 'scriby.ai',
+  },
+  dislack: {
+    name: 'Dislack',
+    domain: 'dislack.com',
+  },
+  presto: {
+    name: 'Presto',
+    domain: 'getpresto.co',
+  },
+  propertyments: {
+    name: 'Propertyments',
+    domain: 'propertyments.com',
+  },
+  sendingbee: {
+    name: 'SendingBee',
+    domain: 'sendingbee.com',
+  },
+  producthunt: {
+    name: 'ProductHunt',
+    domain: 'producthunt.com',
+  },
+  quora: {
+    name: 'Quora',
+    domain: 'quora.com',
+  },
+  metomic: {
+    name: 'Metomic',
+    domain: 'metomic.io',
+  },
+  honeymoney: {
+    name: 'HoneyMoney',
+    domain: 'honeymoney.io',
+  },
+  woodpecker: {
+    name: 'Woodpecker',
+    domain: 'woodpeckerweb.com',
+  },
+  motivii: {
+    name: 'Motivii',
+    domain: 'motivii.com',
+  },
 }

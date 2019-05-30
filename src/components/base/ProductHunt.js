@@ -6,7 +6,7 @@ function ProductHunt ({ name, id }) {
     <a css={styles.container} href={`https://www.producthunt.com/posts/${id}`} target='_blank' rel='noopener noreferrer'>
       <div>
         <h3>We’re trending on ProductHunt!</h3>
-        <p className='xs-hide sm-hide'>If you like {name}, please check us over there and… 
+        <p className='xs-hide sm-hide'>If you like {name}, please check us out over there and… 
         <span css={css`font-size: 1.4em; line-height: 7px; position: relative; top: 2px; margin-left: 0.3em;`} role='img' aria-label='wink'>😉</span></p>
       </div>
       <a>View</a>   
