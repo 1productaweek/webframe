@@ -11,7 +11,7 @@ function List ({ items }) {
   const { CACHE_URL } = useSiteData()
   const showModal = useModal(ScreenModal)
 
-  const itemsEl = (items || []).map(({ src, name, maxHeight, product }, i) => (
+  const itemsEl = (items || []).map(({ src, name, maxHeight = (500 + 200 * Math.random()), product }, i) => (
     <LazyLoad key={src || i} height={200} offset={[0, 400]} once resize>
       <div 
         onClick={() => showModal({ src, name, product })}
