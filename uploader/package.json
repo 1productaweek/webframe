@@ -1,0 +1,9 @@
+{
+  "name": "uploader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/storage": "^2.5.0"
+  }
+}

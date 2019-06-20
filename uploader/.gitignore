@@ -1,0 +1,4 @@
+node_modules
+*service-account*
+dist
+screens
