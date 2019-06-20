@@ -219,4 +219,24 @@ export default {
     name: 'Motivii',
     domain: 'motivii.com',
   },
+  dashly: {
+    name: 'Dashly',
+    domain: 'dashly.io',
+  },
+  crip: {
+    name: 'Crisp',
+    domain: 'crisp.chat',
+  },
+  taskade: {
+    name: 'Taskade',
+    domain: 'taskade.com',
+  },
+  kontist: {
+    name: 'Kontist',
+    domain: 'kontist.com',
+  },
+  iubenda: {
+    name: 'Iubenda',
+    domain: 'iubenda.com',
+  }
 }
