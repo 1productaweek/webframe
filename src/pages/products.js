@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { css } from '@emotion/core'
-// import tw from 'tailwind.macro'
+// 
 import Seo from 'components/Seo'
 import Layout from 'components/Layout'
 import { Row, Col } from 'components/grid'

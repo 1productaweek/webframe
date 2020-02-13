@@ -2,7 +2,7 @@ import React from 'react'
 import firebase from 'firebase'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import { Link } from 'components/base/Router'
 import List from 'components/List'
 import useFirebaseSync from 'hooks/useFirebaseSync'
@@ -41,12 +41,6 @@ function Dashboard () {
 
 const styles = {
   title: css`
-  ${tw`
-    text-4xl
-    text-center
-    mt-12
-    mb-8
-  `}
 `,
 }
 

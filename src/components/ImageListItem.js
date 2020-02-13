@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import { Link } from 'components/base/Router'
 
 export default function ImageListItem ({ to, title, src }) {
@@ -21,12 +21,5 @@ const styles = {
     height: 200px;
     background: #eee;
     overflow: hidden;
-    ${tw`
-      rounded
-      overflow-hidden
-      border
-      border-solid
-      border-gray-300
-    `}
   `,
 }

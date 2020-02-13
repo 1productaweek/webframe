@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import firebase from 'firebase'
 import Label from 'components/form/Label'
 import Input from 'components/form/Input'
@@ -68,25 +68,9 @@ const styles = {
     margin: auto;
     max-width: 500px;
     padding: 1em;
-    ${tw`
-      text-sm
-    `}
   `,
   title: css`
-    ${tw`
-      text-4xl
-      text-center
-      mt-12
-      mb-6
-    `}
   `,
   sub: css`
-    ${tw`
-      text-gray-500
-      text-lg
-      text-center
-      mt-6
-      mb-10
-    `}
   `,
 }

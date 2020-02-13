@@ -1,7 +1,7 @@
 import React from 'react'
 import firebase from 'firebase'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import { Link, NavLink } from 'components/base/Router'
 import logo from 'img/logo.png'
 import useFirebaseAuth from 'hooks/useFirebaseAuth'
@@ -10,7 +10,7 @@ export default function Nav () {
   const userAuth = useFirebaseAuth()
   const onLogout = async () => firebase.auth().signOut()
   return (
-    <nav css={css`${tw`p-4`}`}>
+    <nav >
       <Link to="/">
         <img width={101} src={logo} alt='Webframe Logo' />
       </Link>
@@ -32,18 +32,9 @@ export default function Nav () {
 }
 
 const styles = {
-  tagline: tw`
-    inline-block
-    text-gray-500
-    font-semibold
-    ml-4
-    relative
-  `,
+  tagline: css``,
   menu: css`
     float: right;
-    ${tw`
-      text-sm
-    `}
     a {
       margin-left: 1em;
     }

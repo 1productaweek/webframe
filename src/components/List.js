@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSiteData } from 'react-static'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import LazyLoad from 'react-lazyload'
 import useModal from 'components/modals/useModal'
 import ScreenModal from './ScreenModal'
@@ -36,16 +36,6 @@ function List ({ items }) {
 const styles = {
   screen: css`
     cursor: pointer;
-    ${tw`
-      mb-4
-      w-full
-      bg-gray-300
-      rounded
-      overflow-hidden
-      border
-      border-gray-300
-      border-solid
-    `}
   `,
 }
 

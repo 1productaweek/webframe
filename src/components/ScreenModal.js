@@ -3,7 +3,7 @@ import firebase from 'config/firebase'
 import { useSiteData } from 'react-static'
 import Modal from 'react-modal'
 import { css } from '@emotion/core'
-import tw from 'tailwind.macro'
+
 import { Link } from 'components/base/Router'
 import useModal from 'components/modals/useModal'
 import SignupModal from './auth/SignupModal'
@@ -74,28 +74,13 @@ const styles = {
     padding-bottom: 0.6rem;
   `,
   download: css`
-    ${tw`
-      ml-2
-      text-gray-500
-      bg-white
-      hover:bg-gray-100
-      border-gray-200
-    `}
   `,
   viewAll: css`
-    ${tw`
-      mx-2
-      text-sm
-    `}
   `,
   domain: css`
     float: right;
     display: block;
     padding: 0.8em 0;
-    ${tw`
-      mx-2
-      text-sm
-    `}
   `,
   close: css`
     position: fixed;
