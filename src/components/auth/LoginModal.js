@@ -1,9 +1,7 @@
 import React from 'react'
-// import firebase from 'config/firebase'
 import Modal from 'react-modal'
 import { css } from '@emotion/core'
-// import tw from 'ta.lwind.macro'
-import Signup from './Signup'
+import Login from './Login'
 
 const customStyles = {
   overlay: {
@@ -20,7 +18,7 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-function SignupModal ({ onDone, onCancel, isOpen }) {
+function LoginModal ({ onDone, onCancel, isOpen }) {
   return (
     <Modal
       isOpen={isOpen}
@@ -29,14 +27,10 @@ function SignupModal ({ onDone, onCancel, isOpen }) {
       contentLabel='Screen'
     >
       <div css={css`margin-top:-2em;`}>
-        <Signup onDone={onDone} onCancel={onCancel} isModal={true} />
+        <Login onDone={onDone} onCancel={onCancel} isModal={true} />
       </div>
     </Modal>
   )
 }
 
-// const styles = {
-
-// }
-
-export default SignupModal
+export default LoginModal
