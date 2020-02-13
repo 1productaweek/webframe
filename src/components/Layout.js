@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Nav from './Nav'
 import { css } from '@emotion/core'
 import Sidebar from 'react-sidebar'
 import SideNav from 'components/SideNav'
@@ -28,6 +29,7 @@ function Layout ({ children }) {
 
   return (
     <div css={styles.container}>
+
     <Sidebar
         sidebar={<SideNav />}
         open={isOpen}
@@ -41,6 +43,8 @@ function Layout ({ children }) {
         contentClassName="sidebar-content"
         overlayClassName="sidebar-overlay"
       >
+        <Nav />
+
         <button css={css`position: absolute; right: 100px; top: 100px; background: #ff0;`} onClick={() => setIsOpen(true)}>Open</button>
         {children}
       </Sidebar>

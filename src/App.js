@@ -3,7 +3,6 @@ import { Root, Routes, addPrefetchExcludes } from 'react-static'
 import 'typeface-open-sans'
 import { Router, Redirect } from './components/base/Router'
 import Dashboard from './containers/Dashboard'
-import Nav from './components/Nav'
 import ModalProvider from './components/modals/ModalProvider'
 import ProductHunt from './components/base/ProductHunt'
 import Promo from './components/base/Promo'
@@ -24,7 +23,6 @@ function App() {
     <Root>
       <ModalProvider>
         <ProductHunt name='Webframe' id='webframe' />
-        <Nav />
         <div style={{marginBottom: '4em'}}>
           <React.Suspense fallback={<em>Loading...</em>}>
             <Router primary>
