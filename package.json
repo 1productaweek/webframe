@@ -16,7 +16,7 @@
     "basscss-hide": "^1.0.1",
     "firebase": "6.0.2",
     "firebase-admin": "^8.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.1",
